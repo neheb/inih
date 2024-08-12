@@ -3,4 +3,4 @@
 set -euo pipefail
 
 cd "$(dirname "${1}")"
-diff "${1}" <("${2}")
+diff --strip-trailing-cr "${1}" <("${2}")
