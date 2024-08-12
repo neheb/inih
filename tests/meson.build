@@ -1,4 +1,4 @@
-runtest = files(join_paths(meson.project_source_root(), 'tests', 'runtest.sh'))
+runtest = find_program(meson.project_source_root() / 'tests' / 'runtest.sh')
 
 tests = {
   'multi': { 'args': [] },
