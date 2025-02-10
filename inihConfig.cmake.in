@@ -1,0 +1,4 @@
+@PACKAGE_INIT@
+
+set(inih_CFLAGS "${inih_CFLAGS}"
+list(APPEND inih_CFLAGS "@EXTRA_CFLAGS@")
