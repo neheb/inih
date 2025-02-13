@@ -1,4 +1,10 @@
 @PACKAGE_INIT@
 
-set(inih_CFLAGS "${inih_CFLAGS}"
+set(inih_CFLAGS "${inih_CFLAGS}")
 list(APPEND inih_CFLAGS "@EXTRA_CFLAGS@")
+
+# Use pkg-config to locate inihreader and create a target
+pkg_check_modules(INIREADER REQUIRED INIReader IMPORTED_TARGET)
+if(NOT TARGET inih::ini_reader)
+    add_library(inih::ini_reader ALIAS PkgConfig::INIREADER)
+endif()

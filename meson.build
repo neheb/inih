@@ -99,6 +99,7 @@ if distro_install
         input : 'inihConfig.cmake.in',
         configuration : cmdata,
     )
+    cmake.write_basic_package_version_file(name: 'inih', version: '58.0.0')
 
     pkg.generate(lib_inih,
         name : 'inih',
@@ -147,6 +148,7 @@ if get_option('with_INIReader')
             input : 'INIReaderConfig.cmake.in',
             configuration : cmdata,
         )
+        cmake.write_basic_package_version_file(name: 'INIReader', version: '58.0.0')
 
         pkg.generate(lib_INIReader,
             name : 'INIReader',
