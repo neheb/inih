@@ -1,10 +1,6 @@
 name: Tests
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: ['push', 'pull_request']
 
 jobs:
   build-linux:
@@ -31,6 +27,7 @@ jobs:
       with:
         action: test
         meson-version: 1.4.1
+        options: --verbose
   build-meson-msvc:
     runs-on: windows-latest
 
@@ -41,3 +38,4 @@ jobs:
       with:
         action: test
         meson-version: 1.4.1
+        options: --verbose
